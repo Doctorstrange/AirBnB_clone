@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""define basemodel class"""
+import models
+from uuid import uuid4
+from datetime import datetime
+
+
+class BaseModel:
+    """the base model of the file"""
+
+    def --init__():
+        """initialise instance of base model"""
+        
