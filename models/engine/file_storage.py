@@ -35,16 +35,16 @@ class FileStorage:
         # the new() method sets __object with a formated dictionary represent
         # __class__.__name__.id = (name of the created object)
         # save() takes the dictionary representation
-        for key in dict_store.keys():
+        for obj in dict_store.keys():
             # extracts the value which represents the name of the object to save
-            obj = dict_store[key]
+            obj = dict_store[obj]
            # uses that value as the dictionary key
            # with the result of object.to_dict() set as the key value
             obj_dict[obj] = obj.to_dict()
             # open json file in write mode
-            with open(FileStorage.__file_path, "w") as file:
+        with open(FileStorage.__file_path, "w") as file:
                 # dump the json represenation of the dic in the file for storage
-                json.dump(obj_dict, file)
+            json.dump(obj_dict, file)
 
     def reload(self):
         """Deserialize the JSON file __file_path to __objects, if it exists."""
