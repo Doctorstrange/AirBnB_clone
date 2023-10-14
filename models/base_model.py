@@ -39,7 +39,10 @@ class BaseModel:
         """return a dictionary containing all public instance attribute
         and return key __class__ as an attribute 
         """
-        to_dic = self.__dict__.copy()
+        for key, value in self.__dict__.items(): # copy the instance attribute
+            #name and as the key and its corresponding value to a dictionary
+            to_dic = {}
+            to_dic[key] = value
         to_dic["created_at"] = self.created_at.isoformat() # copy the instance
             #attribute containing date info in isoformat
         to_dic["updated_at"] = self.updated_at.isoformat()
