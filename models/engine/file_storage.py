@@ -35,12 +35,12 @@ class FileStorage:
         # the new() method sets __object with a formated dictionary represent
         # __class__.__name__.id = (name of the created object)
         # save() takes the dictionary representation
-        for obj in dict_store.keys():
+        for key in dict_store.keys():
             # extracts the value which represents the name of the object to save
-            obj = dict_store[obj]
+            obj = dict_store[key]
            # uses that value as the dictionary key
            # with the result of object.to_dict() set as the key value
-            obj_dict[obj] = obj.to_dict()
+            obj_dict[key] = obj.to_dict()
             # open json file in write mode
         with open(FileStorage.__file_path, "w") as file:
                 # dump the json represenation of the dic in the file for storage
