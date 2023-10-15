@@ -13,6 +13,7 @@ class HBNBCommand(cmd.Cmd):
 
     __classes = {
         "BaseModel",
+        "User"
     }
 
     def emptyline(self):
