@@ -15,6 +15,10 @@ class HBNBCommand(cmd.Cmd):
         "BaseModel",
     }
 
+    def emptyline(self):
+        """Do nothing upon receiving an empty line."""
+        pass
+
     def do_EOF(self, arg):
         """EOF signal to exit the program."""
         print("")
