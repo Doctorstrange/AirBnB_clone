@@ -46,5 +46,31 @@ class TestBaseModel_save(unittest.TestCase):
             self.assertIn(class_id, file.read())
 
 
-if __name__ == "__main__":
-    unittest.main()
+class TestBaseModel_to_dict(unittest.TestCase):
+    """to test the to_dict function in BaseModel"""
+
+    def test_to_dict_gives_dic(self):
+        instance = BaseModel()
+        self.assertTrue(dict, type(instance.to_dict()))
+
+    def test_to_dict_added_attribute(self):
+        instance = BaseModel()
+        instance.number = 31
+        instance.name = "femi"
+        self.assertIn("number", instance.to_dict())
+        self.assertIn("name", instance.to_dict())
+
+    def test_to_dict_contains_this_keys(self):
+        instance = BaseModel()
+        self.assertIn("id", instance.to_dict())
+        self.assertIn("created_at", instance.to_dict())
+        self.assertIn("updated_at", instance.to_dict())
+        self.assertIn("__class__", instance.to_dict())
+
+    def test_to_dict_no_None(self):
+        instance = BaseModel()
+        with self.assertRaises(TypeError):
+            instance.to_dict(None)
+
+    if __name__ == "__main__":
+        unittest.main()
