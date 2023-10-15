@@ -22,7 +22,7 @@ class FileStorage:
         # retieve object name
         object_class_name = obj.__class__.__name__
         # store key in specified format
-        key = "{}.{}".format(object_class_name, id)
+        key = "{}.{}".format(object_class_name, obj.id)
         # add dicionary entry to __object
         FileStorage.__objects[key] = obj
 
