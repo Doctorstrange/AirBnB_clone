@@ -38,7 +38,12 @@ class TestBaseModel_save(unittest.TestCase):
         self.assertLess(one_save_time, two_save_time)
         self.assertLess(two_save_time, three_save_time)
 
-    
+    def test_saveclass_id(self):
+        instance = BaseModel()
+        instance.save()
+        class_id = "BaseModel." + instance.id
+        with open("file.json", "r") as file:
+            self.assertIn(class_id, file.read())
 
 
 if __name__ == "__main__":
