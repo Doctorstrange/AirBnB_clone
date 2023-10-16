@@ -14,25 +14,24 @@ from unittest.mock import patch
 class TestHBNBCommand_help(unittest.TestCase):
     """Unittests for testing help messages of the HBNB command interpreter."""
 
-    def test_help_quit(self):
-        h = "Quit command to exit the program."
-        with patch("sys.stdout", new=StringIO()) as output:
-            self.assertFalse(HBNBCommand().onecmd("help quit"))
-            self.assertEqual(h, output.getvalue().strip())
-
-    def test_help_create(self):
-        h = ("Usage: create <class>\n        "
+    def test_create(self):
+        ask = ("Usage: create <class>\n        "
              "Create a new class instance and print its id.")
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help create"))
-            self.assertEqual(h, output.getvalue().strip())
+            self.assertEqual(ask, output.getvalue().strip())
 
-    def test_help_EOF(self):
-        h = "EOF signal to exit the program."
+    def test_EOF(self):
+        ask = "EOF signal to exit the program."
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help EOF"))
-            self.assertEqual(h, output.getvalue().strip())
+            self.assertEqual(ask, output.getvalue().strip())
 
+    def test_quit(self):
+        ask = "Quit command to exit the program."
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertFalse(HBNBCommand().onecmd("help quit"))
+            self.assertEqual(ask, output.getvalue().strip())
 
 if __name__ == "__main__":
     unittest.main()
