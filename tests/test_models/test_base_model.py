@@ -72,5 +72,22 @@ class TestBaseModel_to_dict(unittest.TestCase):
         with self.assertRaises(TypeError):
             instance.to_dict(None)
 
+class TestBaseModel_instance(unittest.TestCase):
+    """text reaction to instance creation"""
+
+    def test_instance_storage(self):
+        self.assertIn(BaseModel(), models.storage.all().values())
+
+    def test_created_at_is_datetime(self):
+        instance = BaseModel()
+        self.assertEqual(datetime, type(instance.created_at))
+
+    def test_updated_at_is_datetime(self):
+        instance = BaseModel()
+        self.assertEqual(datetime, type(instance.updated_at))
+
+    def test_no_args_instance(self):
+        self.assertEqual(BaseModel, type(BaseModel()))
+
     if __name__ == "__main__":
         unittest.main()
