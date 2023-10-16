@@ -33,7 +33,7 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("help quit"))
             self.assertEqual(ask, output.getvalue().strip())
 
-    class TestHBNBCommand_create(unittest.TestCase):
+class TestHBNBCommand_create(unittest.TestCase):
     """test create command"""
 
     def test_create_missing_class(self):
