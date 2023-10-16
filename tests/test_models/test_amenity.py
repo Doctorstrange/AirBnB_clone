@@ -14,6 +14,7 @@ from models.engine.file_storage import FileStorage
 from console import HBNBCommand
 from io import StringIO
 
+
 class TestAmenity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Amenity class."""
 

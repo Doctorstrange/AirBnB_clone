@@ -14,6 +14,7 @@ from models.engine.file_storage import FileStorage
 from console import HBNBCommand
 from io import StringIO
 
+
 class TestReview_instantiation(unittest.TestCase):
     """testing instance of the Review"""
 
@@ -32,5 +33,6 @@ class TestReview_instantiation(unittest.TestCase):
     def test_new_instance_stored_in_objects(self):
         self.assertIn(Review(), models.storage.all().values())
 
+
 if __name__ == "__main__":
-        unittest.main()
+    unittest.main()

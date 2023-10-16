@@ -17,6 +17,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class TestBaseModel_save(unittest.TestCase):
     """to the test the save funtion of the basemodel"""
 
@@ -71,6 +72,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         instance = BaseModel()
         with self.assertRaises(TypeError):
             instance.to_dict(None)
+
 
 class TestBaseModel_instance(unittest.TestCase):
     """text reaction to instance creation"""

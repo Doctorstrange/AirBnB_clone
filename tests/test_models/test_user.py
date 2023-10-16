@@ -14,6 +14,7 @@ from models.engine.file_storage import FileStorage
 from console import HBNBCommand
 from io import StringIO
 
+
 class TestUser_instantiation(unittest.TestCase):
     """testing instance of the User class"""
 
@@ -37,6 +38,7 @@ class TestUser_instantiation(unittest.TestCase):
 
     def test_password_is_public_str(self):
         self.assertEqual(str, type(User.password))
+
 
 if __name__ == "__main__":
     unittest.main()

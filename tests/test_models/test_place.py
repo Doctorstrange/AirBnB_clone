@@ -12,7 +12,8 @@ from datetime import datetime
 from models import storage
 from models.engine.file_storage import FileStorage
 from console import HBNBCommand
-from io import StringIO
+from io import
+
 
 class TestPlace_instantiation(unittest.TestCase):
     """testing instance of the Place"""
