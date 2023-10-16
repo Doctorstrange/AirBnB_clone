@@ -18,9 +18,9 @@ from datetime import datetime
 class TestHBNBCommand_help(unittest.TestCase):
     """Unittests for testing help messages of the HBNB command interpreter."""
 
-    def test_create(self):
-        ask = ("Usage: create <class>\n"
-               "Create a new class instance and print its id.")
+    def test_help_create(self):
+        ask = ("Usage: create <class>\n        "
+             "Create a new class instance and print its id.")
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help create"))
             self.assertEqual(ask, output.getvalue().strip())
