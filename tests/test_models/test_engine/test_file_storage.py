@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for models/engine/file_storage.py.
-
-Unittest classes:
-    TestFileStorage_instantiation
-    TestFileStorage_methods
-"""
+"""tests for file_storage.py"""
 import os
 import json
 import models
@@ -15,7 +10,7 @@ from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the FileStorage class."""
+    """testing instance of FileStorage class."""
 
     def test_FileStorage_file_path_is_private_str(self):
         self.assertEqual(str, type(FileStorage._FileStorage__file_path))
@@ -32,7 +27,7 @@ class TestFileStorage_instantiation(unittest.TestCase):
 
 
 class TestFileStorage_methods(unittest.TestCase):
-    """Unittests for testing methods of the FileStorage class."""
+    """testing methods of FileStorage class."""
 
     def test_new_with_args(self):
         with self.assertRaises(TypeError):
